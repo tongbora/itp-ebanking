@@ -1,0 +1,126 @@
+server:
+  port: 20262
+spring:
+  application:
+    name: pipeline
+
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    function:
+      definition: processProduct;processMessage;processProductDetail;processDebeziumProduct;captureEnvelope;consumeDbzEvent
+    stream:
+      bindings:
+        processProduct-in-0:
+          destination: test-product # topic_name
+          group: monitor-group # consumer_group_id
+          content-type: application/json
+        captureEnvelope-in-0:
+          destination: ITP.CORE_BANKING.RECORD_XML # topic_name
+          group: monitor-group-02 # consumer_group_id
+        consumeDbzEvent-in-0:
+          destination: ITP.CORE_BANKING.RECORD_XML
+          group: record_xml_1
+        consumeDbzEvent-out-0:
+          destination: cleaned_record
+          content-type: application/json
+        processMessage-in-0:
+          destination: test-topic
+        processProductDetail-in-0:
+          destination: consume-product-detail # topic_name
+          group: monitor-group-detail # consumer_group_id
+          content-type: application/json
+        processProductDetail-out-0:
+          destination: producer-product-detail # topic_name
+          content-type: application/json
+        #        processMessage-out-0:
+        #          destination: processed-messages-topic
+
+        # NEW: Debezium CDC consumer with Avro
+        processDebeziumProduct-in-0:
+          destination: postgres_product.public.products
+          group: debezium-consumer-group
+          content-type: application/*+avro  # Changed from application/json
+          consumer:
+            use-native-decoding: true  # Important: Use native Kafka deserialization
+      kafka:
+        binder:
+          brokers: localhost:29092,localhost:29094,localhost:29096
+          configuration:
+            auto.offset.reset: earliest
+            schema.registry.url: http://localhost:8081
+        bindings:
+          # Avro-specific configuration for Debezium consumer
+          processDebeziumProduct-in-0:
+            consumer:
+              configuration:
+                key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                schema.registry.url: http://localhost:8081
+                specific.avro.reader: false
+          captureEnvelope-in-0:
+            consumer:
+              configuration:
+                key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                schema.registry.url: http://localhost:8081
+                specific.avro.reader: true
+          consumeDbzEvent-in-0:
+            consumer:
+              configuration:
+                key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+                schema.registry.url: http://localhost:8081
+                specific.avro.reader: false
+
+
+  security:
+    oauth2:
+      client:
+        provider:
+          itp-standard:
+            issuer-uri: http://localhost:9090
+        registration:
+          itp-standard:
+            provider: itp-standard
+            client-id: itp-standard
+            client-secret: qwerqwer
+            redirect-uri: http://localhost:9999/login/oauth2/code/itp-standard
+            authorization-grant-type: client_credentials
+            #              - authorization_code
+            #              - client_credentials
+            scope:
+              - openid # Auto issue access token
+              - profile # Get profile
+              - email # Get email
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090
+
+# Resilience4j
+#resilience4j:
+#  circuitbreaker:
+#    configs:
+#      default:
+#        sliding-window-size: 10 # Number of requests
+#        failure-rate-threshold: 50 # Percentage of 50%
+#        permitted-number-of-calls-in-half-open-state: 2 # Number of requests before change ot half-open
+#        wait-duration-in-open-state: 10000
+#    instances:
+#      accountService:
+#        base-config: default
+
+# Actuator (add this if not present)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#  health:
+#    circuitbreakers:
+#      enabled: true
+logging:
+  level:
+    co.istad.dara.pipeline_service: DEBUG

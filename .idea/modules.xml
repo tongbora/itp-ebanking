@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/account-service/itp-ebanking.microservices.account-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/account-service/itp-ebanking.microservices.account-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/customer-service/itp-ebanking.microservices.customer-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/customer-service/itp-ebanking.microservices.customer-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservices/pipeline-service/itp-ebanking.microservices.pipeline-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservices/pipeline-service/itp-ebanking.microservices.pipeline-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/config-server/itp-ebanking.spring-cloud.config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/config-server/itp-ebanking.spring-cloud.config-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/eureka-server/itp-ebanking.spring-cloud.eureka-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/eureka-server/itp-ebanking.spring-cloud.eureka-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/gateway-server/itp-ebanking.spring-cloud.gateway-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/gateway-server/itp-ebanking.spring-cloud.gateway-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud/iam-service/itp-ebanking.spring-cloud.iam-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud/iam-service/itp-ebanking.spring-cloud.iam-service.main.iml" />
+    </modules>
+  </component>
+</project>
