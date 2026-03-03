@@ -19,7 +19,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(
                 request -> request
                         .requestMatchers("/public/**").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
         );
 
 

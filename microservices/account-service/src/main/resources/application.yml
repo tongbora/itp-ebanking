@@ -1,3 +1,11 @@
+axon:
+  axonserver:
+    enabled: false
+  serializer:
+    general: jackson3
+    events: jackson3
+    messages: jackson3
+
 eureka:
   instance:
     instance-id: ${spring.application.name}
@@ -9,6 +17,21 @@ server:
 spring:
   application:
     name: account
+
+  # Database configuration
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:16851/db_account
+    username: itpusr
+    password: itp@168
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
   profiles:
     active: dev
   config:

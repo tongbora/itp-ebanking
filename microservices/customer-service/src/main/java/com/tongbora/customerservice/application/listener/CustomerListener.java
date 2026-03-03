@@ -10,6 +10,7 @@ import com.tongbora.customerservice.domain.event.CustomerCreatedEvent;
 import com.tongbora.customerservice.domain.event.CustomerPhoneNumberChangedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @Component
 @RequiredArgsConstructor
+@ProcessingGroup("customer-group")
 @Slf4j
 public class CustomerListener {
 

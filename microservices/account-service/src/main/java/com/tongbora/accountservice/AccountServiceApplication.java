@@ -14,17 +14,4 @@ public class AccountServiceApplication {
         SpringApplication.run(AccountServiceApplication.class, args);
     }
 
-  @Bean
-    CommandLineRunner run(
-            @Value("${service.name}") String serviceName,
-            @Value("${secret.weak-password}") String weakPassword,
-            @Value("${secret.strong-password}") String strongPassword
-  ){
-      return args -> {
-          System.out.println("Service Name: " + serviceName);
-          System.out.println("Weak Password: " + weakPassword);
-          System.out.println("Strong Password: " + strongPassword);
-      };
-  }
-
 }

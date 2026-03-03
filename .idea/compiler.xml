@@ -12,7 +12,6 @@
         <module name="itp-ebanking.spring-cloud.iam-service.main" />
         <module name="itp-ebanking.spring-cloud.eureka-server.main" />
         <module name="itp-ebanking.common.main" />
-        <module name="itp-ebanking.microservices.account-service.main" />
         <module name="itp-ebanking.microservices.pipeline-service.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
@@ -22,6 +21,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.3/52e345c907fbf173b376586c7f8b131d53fa5867/mapstruct-processor-1.6.3.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
+        <module name="itp-ebanking.microservices.account-service.main" />
         <module name="itp-ebanking.microservices.customer-service.main" />
       </profile>
     </annotationProcessing>
