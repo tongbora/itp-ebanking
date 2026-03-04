@@ -21,7 +21,6 @@ import java.util.UUID;
 @Slf4j
 public class AccountServiceImpl implements AccountService {
 
-    private final AccountRepository accountRepository;
     private final AccountApplicationMapper accountApplicationMapper;
     private final CommandGateway commandGateway;
 
@@ -34,11 +33,6 @@ public class AccountServiceImpl implements AccountService {
 
         AccountId result = commandGateway.sendAndWait(createAccountCommand);
         log.info("Create account result: {}", result);
-
-//        AccountEntity accountEntity = accountRepository.findById(result.getValue())
-//                .orElseThrow(() -> new ResponseStatusException(
-//                        HttpStatus.NOT_FOUND, "Account not found"));
-//       log.info("Account entity: {}", accountEntity);
 
         return CreateAccountResponse.builder()
                 .accountId(result)

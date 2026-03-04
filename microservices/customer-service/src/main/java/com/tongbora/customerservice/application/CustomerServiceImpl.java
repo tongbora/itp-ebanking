@@ -3,6 +3,7 @@ package com.tongbora.customerservice.application;
 import com.tongbora.common.CustomerId;
 import com.tongbora.customerservice.application.dto.create.CreateCustomerRequest;
 import com.tongbora.customerservice.application.dto.create.CreateCustomerResponse;
+import com.tongbora.customerservice.application.dto.query.CustomerResponse;
 import com.tongbora.customerservice.application.dto.update.ChangePhoneNumberRequest;
 import com.tongbora.customerservice.application.dto.update.ChangePhoneNumberResponse;
 import com.tongbora.customerservice.application.mapper.CustomerApplicationMapper;

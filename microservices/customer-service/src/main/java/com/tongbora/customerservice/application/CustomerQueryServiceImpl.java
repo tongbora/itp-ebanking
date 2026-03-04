@@ -4,6 +4,7 @@ import com.tongbora.customerservice.application.dto.query.CustomerPageResponse;
 import com.tongbora.customerservice.application.dto.query.CustomerResponse;
 import com.tongbora.customerservice.application.projection.GetCustomerCustomPageQuery;
 import com.tongbora.customerservice.application.projection.GetCustomerQuery;
+import com.tongbora.customerservice.application.projection.GetCustomerQueryById;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventsourcing.eventstore.EventStore;
@@ -56,5 +57,15 @@ public class CustomerQueryServiceImpl implements CustomerQueryService{
         return  eventStore.readEvents(customerId.toString()).asStream()
                 .map(event -> event.getPayload())
                 .toList();
+    }
+
+    @Override
+    public CustomerResponse getCustomerById(UUID customerId) {
+
+        GetCustomerQueryById getCustomerQueryById = new GetCustomerQueryById(customerId);
+
+        return queryGateway.query(getCustomerQueryById,
+                        ResponseTypes.instanceOf(CustomerResponse.class))
+                .join();
     }
 }

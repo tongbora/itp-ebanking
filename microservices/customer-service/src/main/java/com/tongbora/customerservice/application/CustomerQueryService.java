@@ -13,4 +13,6 @@ public interface CustomerQueryService {
     CustomerPageResponse getAllCustomersWithCustomPage(int pageNumber, int pageSize);
 
     List<?> getCustomerHistory(UUID customerId);
+
+    CustomerResponse getCustomerById(UUID customerId);
 }

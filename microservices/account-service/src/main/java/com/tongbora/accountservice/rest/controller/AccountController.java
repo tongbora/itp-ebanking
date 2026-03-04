@@ -1,4 +1,4 @@
-package com.tongbora.accountservice.rest;
+package com.tongbora.accountservice.rest.controller;
 
 import com.tongbora.accountservice.application.AccountService;
 import com.tongbora.accountservice.application.dto.create.CreateAccountRequest;

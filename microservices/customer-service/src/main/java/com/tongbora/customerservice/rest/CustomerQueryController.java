@@ -1,6 +1,7 @@
 package com.tongbora.customerservice.rest;
 
 import com.tongbora.customerservice.application.CustomerQueryService;
+import com.tongbora.customerservice.application.dto.create.CreateCustomerResponse;
 import com.tongbora.customerservice.application.dto.query.CustomerPageResponse;
 import com.tongbora.customerservice.application.dto.query.CustomerResponse;
 import com.tongbora.customerservice.application.projection.GetCustomerQuery;
@@ -41,5 +42,11 @@ public class CustomerQueryController {
     @GetMapping("/{customerId}/history")
     public List<?> getCustomerHistory(@PathVariable UUID customerId){
         return customerQueryService.getCustomerHistory(customerId);
+    }
+
+    @GetMapping("/{customerId}")
+    public CustomerResponse getCustomerById(@PathVariable UUID customerId) {
+        log.info("Get customer by id: {}", customerId);
+        return customerQueryService.getCustomerById(customerId);
     }
 }

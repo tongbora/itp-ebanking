@@ -79,5 +79,4 @@ public class AccountAggregate {
         this.createdBy = accountCreatedEvent.createdBy();
     }
 
-
 }

@@ -35,4 +35,5 @@ public class CustomerController {
         log.info("Change phone number: {}", changePhoneNumberRequest);
         return customerService.changePhoneNumber(customerId, changePhoneNumberRequest);
     }
+
 }
