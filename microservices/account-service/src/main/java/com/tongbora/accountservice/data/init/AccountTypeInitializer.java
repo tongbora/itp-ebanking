@@ -2,13 +2,12 @@ package com.tongbora.accountservice.data.init;
 
 import com.tongbora.accountservice.data.entity.AccountTypeEntity;
 import com.tongbora.accountservice.data.repository.AccountTypeRepository;
-import com.tongbora.accountservice.domain.valueobject.AccountType;
+import com.tongbora.common.domain.valueobject.AccountType;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 @Component

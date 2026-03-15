@@ -8,6 +8,7 @@ ALTER ROLE itpusr WITH LOGIN REPLICATION;
 -- =========================
 CREATE DATABASE db_customer OWNER itpusr;
 CREATE DATABASE db_account OWNER itpusr;
+CREATE DATABASE db_account_query OWNER itpusr;
 CREATE DATABASE db_transaction OWNER itpusr;
 CREATE DATABASE db_transfer OWNER itpusr;
 CREATE DATABASE db_payment OWNER itpusr;

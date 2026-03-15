@@ -1,10 +1,23 @@
 axon:
+  kafka:
+    bootstrap-servers: localhost:29092,localhost:29094,localhost:29096
+    default-topic: Axon.Account.Events
+    client-id: kafka-axon-account
+    message-converter-mode: default # alternative is cloud_event <https://cloudevents.io/>
+    properties:
+      security.protocol: PLAINTEXT # PLAINTEXT for no security purpose
+    publisher:
+      confirmation-mode: transactional
+    producer:
+      transaction-id-prefix: kafka-axon-account-txn
+      retries: 5 # bigger than zero in case of using transactional confirmation-mode
+      event-processor-mode: tracking
   axonserver:
     enabled: false
   serializer:
-    general: jackson3
-    events: jackson3
-    messages: jackson3
+    general: jackson
+    events: jackson
+    messages: jackson
 
 eureka:
   instance:
@@ -26,7 +39,7 @@ spring:
     password: itp@168
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: false
     properties:
       hibernate:

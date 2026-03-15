@@ -1,8 +1,8 @@
 package com.tongbora.accountservice.data.entity;
 
 
-import com.tongbora.accountservice.domain.valueobject.AccountStatus;
-import com.tongbora.accountservice.domain.valueobject.Money;
+import com.tongbora.common.domain.valueobject.AccountStatus;
+import com.tongbora.common.domain.valueobject.Money;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +29,7 @@ public class AccountEntity {
 
     @ManyToOne
     @JoinColumn(name = "account_type_id")
-    private AccountTypeEntity accountTypeId;
+    private AccountTypeEntity accountType;
 
     private UUID branchId;
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="itp-ebanking.microservices.customer-service.main" name="itp-ebanking.microservices.customer-service.main" framework="JPA" ormUnit="itp-ebanking.microservices.customer-service.main:itp-ebanking.microservices.customer-service.main" defaultDataSourceId="4eaf1073-c7ef-4b83-8448-8d273b558e0f__db_account_query_public" />
+      <persistence-unit moduleName="itp-ebanking.microservices.account-service.main" name="itp-ebanking.microservices.account-service.main" framework="JPA" ormUnit="itp-ebanking.microservices.account-service.main:itp-ebanking.microservices.account-service.main" defaultDataSourceId="4eaf1073-c7ef-4b83-8448-8d273b558e0f__db_account_query_public" />
+    </persistence-units>
+  </component>
+</project>

@@ -1,0 +1,5 @@
+ALTER TABLE accounts
+ADD COLUMN balance DECIMAL;
+
+ALTER TABLE accounts
+ADD COLUMN currency VARCHAR(10);

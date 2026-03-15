@@ -1,0 +1,58 @@
+server:
+    port: 20262
+axon:
+  kafka:
+    bootstrap-servers: localhost:29092,localhost:29094,localhost:29096
+    default-topic: Axon.Account.Events
+    client-id: kafka-axon-account
+    message-converter-mode: default # alternative is cloud_event <https://cloudevents.io/>
+    properties:
+      security.protocol: PLAINTEXT # PLAINTEXT for no security purpose
+    consumer:
+      event-processor-mode: pooled_streaming
+
+  axonserver:
+    enabled: false
+  serializer:
+    general: jackson
+    events: jackson
+    messages: jackson
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}
+    prefer-ip-address: true
+
+
+spring:
+  application:
+    name: account-query-service
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:16851/db_account_query
+    username: itpusr
+    password: itp@168
+
+  # Database configuration for Liquibase
+  liquibase:
+    enabled: true
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:16851/db_account_query
+    user: itpusr
+    password: itp@168
+
+  # R2DBC configuration for reactive database access
+  r2dbc:
+    url: r2dbc:postgresql://localhost:16851/db_account_query
+    username: itpusr
+    password: itp@168
+
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888

@@ -3,6 +3,10 @@ package com.tongbora.accountservice.rest.controller;
 import com.tongbora.accountservice.application.AccountService;
 import com.tongbora.accountservice.application.dto.create.CreateAccountRequest;
 import com.tongbora.accountservice.application.dto.create.CreateAccountResponse;
+import com.tongbora.accountservice.application.dto.update.FreezeAccountRequest;
+import com.tongbora.accountservice.application.dto.update.MoneyDepositRequest;
+import com.tongbora.accountservice.application.dto.update.MoneyResponse;
+import com.tongbora.accountservice.application.dto.update.MoneyWithdrawRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,5 +22,23 @@ public class AccountController {
     @PostMapping
     public CreateAccountResponse createAccount(@RequestBody CreateAccountRequest createAccountRequest) {
         return accountService.createAccount(createAccountRequest);
+    }
+
+    @PatchMapping("/deposit")
+    @ResponseStatus(HttpStatus.OK)
+    public MoneyResponse depositMoney(@RequestBody MoneyDepositRequest moneyDepositRequest) {
+        return accountService.depositMoney(moneyDepositRequest);
+    }
+
+    @PatchMapping("/withdraw")
+    @ResponseStatus(HttpStatus.OK)
+    public MoneyResponse depositMoney(@RequestBody MoneyWithdrawRequest moneyWithdrawRequest) {
+        return accountService.withdrawMoney(moneyWithdrawRequest);
+    }
+
+    @PatchMapping("/freeze")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void freezeAccount(@RequestBody FreezeAccountRequest freezeAccountRequest) {
+        accountService.freezeAccount(freezeAccountRequest);
     }
 }

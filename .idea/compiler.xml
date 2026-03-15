@@ -7,12 +7,12 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
         </processorPath>
+        <module name="itp-ebanking.common.main" />
         <module name="itp-ebanking.spring-cloud.gateway-server.main" />
         <module name="itp-ebanking.spring-cloud.config-server.main" />
         <module name="itp-ebanking.spring-cloud.iam-service.main" />
-        <module name="itp-ebanking.spring-cloud.eureka-server.main" />
-        <module name="itp-ebanking.common.main" />
         <module name="itp-ebanking.microservices.pipeline-service.main" />
+        <module name="itp-ebanking.spring-cloud.eureka-server.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -22,6 +22,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
         <module name="itp-ebanking.microservices.account-service.main" />
+        <module name="itp-ebanking.microservices.account-query-service.main" />
         <module name="itp-ebanking.microservices.customer-service.main" />
       </profile>
     </annotationProcessing>
@@ -39,6 +40,9 @@
       <module name="itp-ebanking.common" options="-parameters" />
       <module name="itp-ebanking.common.main" options="-parameters" />
       <module name="itp-ebanking.common.test" options="-parameters" />
+      <module name="itp-ebanking.microservices.account-query-service" options="-parameters" />
+      <module name="itp-ebanking.microservices.account-query-service.main" options="-parameters" />
+      <module name="itp-ebanking.microservices.account-query-service.test" options="-parameters" />
       <module name="itp-ebanking.microservices.account-service" options="-parameters" />
       <module name="itp-ebanking.microservices.account-service.main" options="-parameters" />
       <module name="itp-ebanking.microservices.account-service.test" options="-parameters" />

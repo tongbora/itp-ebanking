@@ -5,4 +5,18 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../../microservices/customer-service/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
     </content>
   </component>
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="itp-ebanking.microservices.customer-service.main" value="4eaf1073-c7ef-4b83-8448-8d273b558e0f__db_account_query_public" />
+        </datasource-mapping>
+        <naming-strategy-map>
+          <unit-entry name="entityManagerFactory" />
+        </naming-strategy-map>
+      </configuration>
+    </facet>
+  </component>
 </module>

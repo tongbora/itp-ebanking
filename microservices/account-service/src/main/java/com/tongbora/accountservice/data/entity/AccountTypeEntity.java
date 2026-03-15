@@ -1,13 +1,12 @@
 package com.tongbora.accountservice.data.entity;
 
-import com.tongbora.accountservice.domain.valueobject.AccountType;
+import com.tongbora.common.domain.valueobject.AccountType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
 import java.util.UUID;
 
 @Getter

@@ -1,7 +1,7 @@
 package com.tongbora.accountservice.data.repository;
 
 import com.tongbora.accountservice.data.entity.AccountTypeEntity;
-import com.tongbora.accountservice.domain.valueobject.AccountType;
+import com.tongbora.common.domain.valueobject.AccountType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

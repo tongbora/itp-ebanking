@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/microservices" />
+            <option value="$PROJECT_DIR$/microservices/account-query-service" />
             <option value="$PROJECT_DIR$/microservices/account-service" />
             <option value="$PROJECT_DIR$/microservices/customer-service" />
             <option value="$PROJECT_DIR$/microservices/pipeline-service" />
