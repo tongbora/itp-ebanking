@@ -1,4 +1,4 @@
-package com.tongbora.accountservice.data.entity;
+package com.tongbora.accountservice.dataaccess.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

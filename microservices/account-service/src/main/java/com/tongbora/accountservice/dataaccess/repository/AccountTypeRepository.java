@@ -1,6 +1,6 @@
-package com.tongbora.accountservice.data.repository;
+package com.tongbora.accountservice.dataaccess.repository;
 
-import com.tongbora.accountservice.data.entity.AccountTypeEntity;
+import com.tongbora.accountservice.dataaccess.entity.AccountTypeEntity;
 import com.tongbora.common.domain.valueobject.AccountType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,5 +12,7 @@ public interface AccountTypeRepository
 
     boolean existsByAccountType(AccountType accountType);
     Optional<AccountTypeEntity> findByAccountType(AccountType accountType);
+
+
 
 }

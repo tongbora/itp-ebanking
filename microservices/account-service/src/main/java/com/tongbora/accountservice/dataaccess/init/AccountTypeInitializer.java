@@ -1,7 +1,7 @@
-package com.tongbora.accountservice.data.init;
+package com.tongbora.accountservice.dataaccess.init;
 
-import com.tongbora.accountservice.data.entity.AccountTypeEntity;
-import com.tongbora.accountservice.data.repository.AccountTypeRepository;
+import com.tongbora.accountservice.dataaccess.entity.AccountTypeEntity;
+import com.tongbora.accountservice.dataaccess.repository.AccountTypeRepository;
 import com.tongbora.common.domain.valueobject.AccountType;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

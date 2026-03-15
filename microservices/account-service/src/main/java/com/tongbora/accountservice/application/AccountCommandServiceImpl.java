@@ -7,6 +7,7 @@ import com.tongbora.accountservice.application.dto.update.MoneyDepositRequest;
 import com.tongbora.accountservice.application.dto.update.MoneyResponse;
 import com.tongbora.accountservice.application.dto.update.MoneyWithdrawRequest;
 import com.tongbora.accountservice.application.mapper.AccountApplicationMapper;
+import com.tongbora.accountservice.application.port.input.service.AccountCommandService;
 import com.tongbora.accountservice.domain.command.CreateAccountCommand;
 import com.tongbora.accountservice.domain.command.DepositMoneyCommand;
 import com.tongbora.accountservice.domain.command.FreezeAccountCommand;
@@ -23,7 +24,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class AccountServiceImpl implements AccountService {
+public class AccountCommandServiceImpl implements AccountCommandService {
 
     private final AccountApplicationMapper accountApplicationMapper;
     private final CommandGateway commandGateway;

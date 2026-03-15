@@ -1,6 +1,5 @@
-package com.tongbora.accountservice.data.entity;
+package com.tongbora.accountservice.dataaccess.entity;
 
-import com.tongbora.common.BranchId;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

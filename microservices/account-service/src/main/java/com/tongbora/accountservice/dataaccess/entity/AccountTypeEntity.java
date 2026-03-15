@@ -1,4 +1,4 @@
-package com.tongbora.accountservice.data.entity;
+package com.tongbora.accountservice.dataaccess.entity;
 
 import com.tongbora.common.domain.valueobject.AccountType;
 import jakarta.persistence.*;

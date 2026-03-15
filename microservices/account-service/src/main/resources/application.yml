@@ -12,6 +12,9 @@ axon:
       transaction-id-prefix: kafka-axon-account-txn
       retries: 5 # bigger than zero in case of using transactional confirmation-mode
       event-processor-mode: tracking
+    consumer:
+      event-processor-mode: pooled_streaming
+
   axonserver:
     enabled: false
   serializer:
